@@ -6,7 +6,7 @@ import cx from "classnames";
 
 const Cards = ({ data }) => {
   if (!data) {
-    return "Loading...";
+    return " Covid Data is Loading...";
   }
 
   const confirmed = data.confirmed.value;
@@ -33,7 +33,7 @@ const Cards = ({ data }) => {
                 <CountUp
                   start={0}
                   end={confirmed}
-                  duration={86400}
+                  duration={2.5}
                   separator=","
                 />
               </Typography>
@@ -61,7 +61,7 @@ const Cards = ({ data }) => {
                 <CountUp
                   start={0}
                   end={recovered}
-                  duration={86400}
+                  duration={2.5}
                   separator=","
                 />
               </Typography>
@@ -85,12 +85,7 @@ const Cards = ({ data }) => {
                 Deaths
               </Typography>
               <Typography variant="h5">
-                <CountUp
-                  start={0}
-                  end={deaths}
-                  duration={86400}
-                  separator=","
-                />
+                <CountUp start={0} end={deaths} duration={2.5} separator="," />
               </Typography>
               <Typography color="textSecondary" gutterBottom>
                 {lastUpdate}
