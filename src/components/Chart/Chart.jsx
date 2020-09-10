@@ -5,9 +5,11 @@ const Chart = ({ dailyData }) => {
   const modifiedData = dailyData.map((data) => ({
     confirmed: data.confirmed.total,
     deaths: data.deaths.total,
-    recovered: data.recovered.total,
+    china: data.deaths.china,
     date: data.reportDate
   }));
+
+  console.log(modifiedData.map(({ china }) => china));
 
   const lineChart = modifiedData.length ? (
     <Line
@@ -28,11 +30,8 @@ const Chart = ({ dailyData }) => {
             fill: true
           },
           {
-            data: modifiedData.map(({ recovered }) => recovered),
-            label: "recovered",
-            borderColor: "green",
-            backgroundColor: "rgba(255,0,0,.5)",
-            fill: true
+            data: modifiedData.map(({ china }) => china),
+            label: "China"
           }
         ]
       }}

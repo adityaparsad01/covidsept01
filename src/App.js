@@ -12,8 +12,6 @@ export default function App() {
   const [ddata, setDdata] = useState([]);
   const [country, setCountry] = useState([]);
   const [countrypick, setCountryPick] = useState("");
-  console.log(countrypick);
-  console.log(covid);
 
   const data = async (countrypick) => {
     let changeable = URL;

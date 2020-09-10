@@ -6,7 +6,7 @@ import cx from "classnames";
 
 const Cards = ({ data }) => {
   if (!data) {
-    return " Covid Data is Loading...";
+    return "Loading...";
   }
 
   const confirmed = data.confirmed.value;
